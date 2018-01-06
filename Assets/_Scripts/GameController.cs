@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour {
     public void SetLifePoints(int lifePoints, bool playSound)
     {
         this._lifePoints = lifePoints;
-        this.LifePoints.text = "Life: " + lifePoints;
+        this.LifePoints.text = "" + lifePoints;
         //When true play the sound fx
         if (playSound)
         {

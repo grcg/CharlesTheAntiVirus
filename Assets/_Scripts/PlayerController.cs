@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
 	//Public properties 
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 	public float BottomBoundary;
 
 	public GameObject bullet;
-
+    public HealthbarScript bar;
 	//to limit the shots
 	public float fireCooldown = 0.5f;
 	//timestamp of when the last shot was fired
@@ -21,13 +21,13 @@ public class PlayerController : MonoBehaviour {
 
 	// changed
 	public float playerX = -955;
-
-
+    
 	//Public methods
 
 
 	// Use this for initialization
 	void Start () {
+        bar = gameObject.AddComponent<HealthbarScript>();
 	}
 
 	// Update is called once per frame
@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour {
 		if (collision.gameObject.tag == "Bacteria")
 		{
 			gameController.SetLifePoints(gameController.GetLifePoints() - 5, true);
+            bar.setHealth(gameController.GetLifePoints() - 5);
 			Debug.Log("Collided with Bacteria");
 		}
 	}
