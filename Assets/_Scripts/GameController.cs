@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour {
     public int bacteriaNumber;
     //display txt: life and score
     public Text PointsLabel;
-    public Text LifePoints;
+    //public Text LifePoints;
     //Private Fields
     private List<GameObject> _bacteria;
     private int _points;
@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour {
     public void SetLifePoints(int lifePoints, bool playSound)
     {
         this._lifePoints = lifePoints;
-        this.LifePoints.text = "" + lifePoints;
+        //this.LifePoints.text = "" + lifePoints;
         //When true play the sound fx
         if (playSound)
         {
