@@ -89,7 +89,9 @@ public class PlayerController : MonoBehaviour {
 		if (collision.gameObject.tag =="WhiteBloodCell")
 		{
 			gameController.SetPoints(gameController.GetPoints() + 25, true);
-			Debug.Log("Collided with White Cell");           
+            Debug.Log("Collided with White Blood Cell");
+   //         gameController.SetLifePoints(gameController.GetLifePoints() + 5, true);
+			//Debug.Log("Life gained");           
 		}
 		if (collision.gameObject.tag == "Bacteria")
 		{
