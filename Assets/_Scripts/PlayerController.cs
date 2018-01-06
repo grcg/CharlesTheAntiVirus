@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 	public float BottomBoundary;
 
 	public GameObject bullet;
-    public HealthbarScript bar;
+    public Animator anim;
     //public Ga
 	//to limit the shots
 	public float fireCooldown = 0.5f;
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        bar = gameObject.AddComponent<HealthbarScript>();
+        anim = GetComponent<Animator>(); 
 	}
 
 	// Update is called once per frame

@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 222817733}
   - component: {fileID: 222817734}
   - component: {fileID: 222817735}
+  - component: {fileID: 222817736}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -302,7 +303,7 @@ MonoBehaviour:
   TopBoundary: 435
   BottomBoundary: -435
   bullet: {fileID: 1883202593617888, guid: 0191ff81a46646949af79fc86ba75714, type: 2}
-  bar: {fileID: 0}
+  anim: {fileID: 0}
   fireCooldown: 0.5
   playerX: -955
 --- !u!60 &222817733
@@ -407,6 +408,23 @@ MonoBehaviour:
   repeatDamagePeriod: 2
   ouchClips: []
   hurtForce: 1
+--- !u!95 &222817736
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 222817729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ce052469fe73134db26ba9ee686c022, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &283843594
 GameObject:
   m_ObjectHideFlags: 0
