@@ -10,7 +10,7 @@ public class HealthbarScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         this.health = maximumHealth;
-        InvokeRepeating("decreaseHealth",0f,2f);
+        //InvokeRepeating("decreaseHealth",0f,2f);
 	}
 	
 	// Update is called once per frame
@@ -20,7 +20,7 @@ public class HealthbarScript : MonoBehaviour {
 
     public void decreaseHealth()
     {
-        health -= 5f;
+        health -= 25f;
         float newHealth = health / maximumHealth;
         setHealth(newHealth); 
     }
@@ -29,4 +29,15 @@ public class HealthbarScript : MonoBehaviour {
     {
         Bar.fillAmount = myhealth;
     }
+
+    /*void Update()
+    {
+        //updateHealth(health);
+    }*/
+
+    /*public void updateHealth(float health)
+    {
+        float amount = (health / 100.0f) * 180.0f / 360;
+        Bar.fillAmount = amount;
+    }*/
 }
