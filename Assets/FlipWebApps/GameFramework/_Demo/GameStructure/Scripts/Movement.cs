@@ -19,7 +19,7 @@
 // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //----------------------------------------------
 
-using GameFramework.GameStructure.Levels;
+//using GameFramework.GameStructure.Levels;
 using UnityEngine;
 
 namespace GameFramework._Demo.GameStructure.Scripts
@@ -28,7 +28,7 @@ namespace GameFramework._Demo.GameStructure.Scripts
 
         public void Update()
         {
-            if (LevelManager.Instance.IsLevelRunning)
+            /*if (LevelManager.Instance.IsLevelRunning)
             {
                 if (UnityEngine.Input.GetKey(KeyCode.RightArrow))
                 {
@@ -50,7 +50,7 @@ namespace GameFramework._Demo.GameStructure.Scripts
                     var rigidBody = GetComponent<Rigidbody>();
                     rigidBody.MovePosition(transform.position + new Vector3(0, -0.1f));
                 }
-            }
+            }*/
         }
     }
 }
