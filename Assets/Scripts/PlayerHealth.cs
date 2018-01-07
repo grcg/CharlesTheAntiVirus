@@ -12,13 +12,11 @@ public class PlayerHealth : MonoBehaviour
 	private SpriteRenderer healthbar;			
 	private float lastHit;					
 	private Vector3 healthScale;				
-	private PlayerControl playerControl;		
 	private Animator anim;						
 
 
 	void Awake ()
 	{
-		playerControl = GetComponent<PlayerControl>();
 		healthbar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
         
@@ -54,8 +52,7 @@ public class PlayerHealth : MonoBehaviour
 					//GetComponent<PlayerControl>().enabled = false;
                     
 					//GetComponentInChildren<Gun>().enabled = false;
-
-					// ... Trigger the 'Die' animation state
+                    
 					anim.SetTrigger("Die");
 				}
 			}
