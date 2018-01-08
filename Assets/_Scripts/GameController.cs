@@ -58,6 +58,10 @@ public class GameController : MonoBehaviour {
         {
             this.goodSound.Play();
         }
+        if(this._points == 100)
+        {
+            SceneManager.LoadScene("NextLevel");
+        }
     }
     //Set Life Points
     public void SetLifePoints(int lifePoints, bool playSound)
