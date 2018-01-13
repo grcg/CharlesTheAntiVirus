@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
     //Public Fields
     //public int minSpawn;
     //public int maxSpawn;
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour {
     public int bacteriaNumber;
     //display txt: life and score
     public Text PointsLabel;
+    public bool gameOver = false;
     //public Text LifePoints;
     //Private Fields
     private List<GameObject> _bacteria;
@@ -25,7 +27,8 @@ public class GameController : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         //bacteriaNumber = Random.Range(minSpawn, maxSpawn);
         this.goodSound.Stop();
         this.badSound.Stop();
@@ -40,12 +43,16 @@ public class GameController : MonoBehaviour {
         {
             this._bacteria.Add(Instantiate(Bacteria));
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //bacteriaNumber = Random.Range(minSpawn, maxSpawn);
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        //bacteriaNumber = Random.Range(minSpawn, maxSpawn);
+        if (gameOver)
+        {
+            SceneManager.LoadScene("End");
+        }
     }
 
     //Set score 
@@ -53,14 +60,21 @@ public class GameController : MonoBehaviour {
     {
         this._points = points;
         this.PointsLabel.text = "POINTS: " + points;
-        //When true play the sound fx
-        if (playsound)
+        if (!gameOver)
         {
-            this.goodSound.Play();
+            //When true play the sound fx
+            if (playsound)
+            {
+                this.goodSound.Play();
+            }
+            if (this._points == 100)
+            {
+                SceneManager.LoadScene("NextLevel");
+            }
         }
-        if(this._points == 100)
+        else
         {
-            SceneManager.LoadScene("NextLevel");
+            return;
         }
     }
     //Set Life Points
@@ -74,9 +88,9 @@ public class GameController : MonoBehaviour {
             this.badSound.Play();
         }
         //If lives depletes to zero then lose condition activates, goes to end scene
-        if (this.GetLifePoints() <=0)
+        if (this.GetLifePoints() <= 0)
         {
-            SceneManager.LoadScene("End");
+            gameOver = true;
             //Add losing sound
         }
     }
@@ -91,9 +105,15 @@ public class GameController : MonoBehaviour {
         return this._lifePoints;
     }
 
-	public void BacteriaKilled() {
-		SetPoints (GetPoints () + 5, true);
-	}
+    public void BacteriaKilled()
+    {
+        SetPoints(GetPoints() + 5, true);
+    }
+
+    public void obstacleDodged()
+    {
+        SetPoints(GetPoints() + 10, true);
+    }
 }
 
 //Notes to self

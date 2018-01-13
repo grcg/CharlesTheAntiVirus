@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 637233073}
   - component: {fileID: 637233072}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,6 +814,7 @@ MonoBehaviour:
   Bacteria: {fileID: 1041260828256314, guid: e16450d0594f435459c5ca6f955ff824, type: 2}
   bacteriaNumber: 6
   PointsLabel: {fileID: 131986344}
+  gameOver: 0
 --- !u!4 &637233071
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,3 +1053,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &2099734059
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4506481646140912, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.2600403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506481646140912, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -203.90028
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506481646140912, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506481646140912, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506481646140912, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506481646140912, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506481646140912, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506481646140912, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fafe9ef8cf5c1394491df2eeebe72c02, type: 2}
+  m_IsPrefabParent: 0
