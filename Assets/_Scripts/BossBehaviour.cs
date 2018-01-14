@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class BossBehaviour : MonoBehaviour {
 
@@ -82,7 +82,8 @@ public class BossBehaviour : MonoBehaviour {
         if (bossHp <= 0)
         {
             // what happens when the enemy is hit *then* dies
-            GameObject.Find("GameController").SendMessage("BacteriaKilled");
+            //GameObject.Find("GameController").SendMessage("BacteriaKilled");
+            SceneManager.LoadScene("0Start");
         }
     }
 }

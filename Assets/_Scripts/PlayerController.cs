@@ -91,7 +91,14 @@ public class PlayerController : MonoBehaviour {
             //bar.setHealth(gameController.GetLifePoints() - 5);
 			Debug.Log("Collided with Bacteria");
 		}
-	}
+        if (collision.gameObject.tag == "obstacle")
+        {
+            gameController.SetLifePoints(gameController.GetLifePoints() - 5, true);
+            //bar.setHealth(gameController.GetLifePoints() - 5);
+            Debug.Log("Collided with Bacteria");
+            gameController.obstacleHit.Play();
+        }
+    }
 
     // TODO: coroutine to change firing speed
     IEnumerator IncreaseFiringSpeed()

@@ -1692,7 +1692,7 @@ MonoBehaviour:
   characterVelocity: 100
   maxBossHp: 2
   bossHp: 0
-  bossCells: {fileID: 0}
+  bossCells: {fileID: 1880095403033314, guid: fd24bd5d2d297144e8aa6d55b06998ce, type: 2}
   spawnValues: {x: 0, y: 0, z: 0}
 --- !u!4 &2007531647
 Transform:

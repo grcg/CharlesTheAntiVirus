@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     //Audio source
     public AudioSource goodSound;
     public AudioSource badSound;
+    public AudioSource obstacleHit;
     //Bacteria spawn num
     public GameObject Bacteria;
     public int bacteriaNumber;
@@ -55,6 +56,7 @@ public class GameController : MonoBehaviour
         //bacteriaNumber = Random.Range(minSpawn, maxSpawn);
         this.goodSound.Stop();
         this.badSound.Stop();
+        this.obstacleHit.Stop();
         //Set scores and life points to default values of 0 and 100
         //if using these sound will play in beginning
         this.SetPoints(0, false);
@@ -106,7 +108,7 @@ public class GameController : MonoBehaviour
             }
             if (sceneName == "NextLevel")
             {
-                if(this._points == 150)
+                if(this._points == 250)
                 {
                     SceneManager.LoadScene("3BossIntro");
                 }
