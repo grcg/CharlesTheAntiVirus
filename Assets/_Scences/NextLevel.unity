@@ -807,6 +807,7 @@ GameObject:
   - component: {fileID: 637233070}
   - component: {fileID: 637233073}
   - component: {fileID: 637233072}
+  - component: {fileID: 637233074}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1008,6 +1009,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &637233074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637233069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05617de26193f7a4ba7941dedb520089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePoolSize: 5
+  obstaclePrefab: {fileID: 1214448802795856, guid: fafe9ef8cf5c1394491df2eeebe72c02,
+    type: 2}
+  spawnRate: 4
+  obstacleMin: -1
+  obstacleMax: 3.5
 --- !u!1 &1813541803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,7 +1105,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c024b68777975ca48bea8681ced6308e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7bc9ac03b3a02b3448d3137fd264d059, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

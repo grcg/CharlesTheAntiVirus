@@ -202,7 +202,7 @@ MonoBehaviour:
   RightBoundary: 950
   TopBoundary: 435
   BottomBoundary: -435
-  bullet: {fileID: 1883202593617888, guid: 0191ff81a46646949af79fc86ba75714, type: 2}
+  bullet: {fileID: 1501102949871978, guid: bf837550321c7f848a6bb6ba702344ef, type: 2}
   anim: {fileID: 0}
   fireCooldown: 0.5
   playerX: -955

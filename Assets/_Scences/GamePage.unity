@@ -298,6 +298,12 @@ Prefab:
       propertyPath: shootingSound
       value: 
       objectReference: {fileID: 1395470975}
+    - target: {fileID: 114092457288902394, guid: 0499d45fc4087af4a8a2bb1e7d45d189,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1501102949871978, guid: bf837550321c7f848a6bb6ba702344ef,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0499d45fc4087af4a8a2bb1e7d45d189, type: 2}
   m_IsPrefabParent: 0

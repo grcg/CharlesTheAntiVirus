@@ -8,6 +8,11 @@ TagManager:
   - Undefined
   - WhiteBloodCell
   - Bacteria
+  - HealthBar
+  - PointsLabel
+  - BossCell
+  - Boss
+  - BossHealthBar
   layers:
   - Default
   - TransparentFX

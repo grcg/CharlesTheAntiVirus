@@ -16,8 +16,8 @@ public class GameController : MonoBehaviour
     //Bacteria spawn num
     public GameObject Bacteria;
     public int bacteriaNumber;
-	public GameObject WhiteBloodCell;
-	public int WhiteBloodCellAmount;
+    public GameObject WhiteBloodCell;
+    public int WhiteBloodCellAmount;
     //display txt: life and score
     public Text PointsLabel;
     public bool gameOver = false;
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     //public Text LifePoints;
     //Private Fields
     private List<GameObject> _bacteria;
-	private List<GameObject> _whiteBloodCell;
+    private List<GameObject> _whiteBloodCell;
 
     private int _points;
     private int _lifePoints;
@@ -33,12 +33,15 @@ public class GameController : MonoBehaviour
     // TODO: define next scene name
     public string nextScene;
     public int pointsToWin = 500;
+    private Scene currentScene;
+    private string sceneName = "";
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-        }else if (instance != this)
+        }
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
@@ -47,6 +50,8 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         //bacteriaNumber = Random.Range(minSpawn, maxSpawn);
         this.goodSound.Stop();
         this.badSound.Stop();
@@ -62,16 +67,17 @@ public class GameController : MonoBehaviour
             this._bacteria.Add(Instantiate(Bacteria));
         }
 
-		this._whiteBloodCell = new List<GameObject>();
-		//creating pool of bacteria to keep track of amount of bacteria
-		for (int i = 0; i < this.WhiteBloodCellAmount; i++)
-		{
-			this._bacteria.Add(Instantiate(WhiteBloodCell));
-		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        this._whiteBloodCell = new List<GameObject>();
+        //creating pool of bacteria to keep track of amount of bacteria
+        for (int i = 0; i < this.WhiteBloodCellAmount; i++)
+        {
+            this._bacteria.Add(Instantiate(WhiteBloodCell));
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //bacteriaNumber = Random.Range(minSpawn, maxSpawn);
         if (gameOver)
         {
@@ -91,9 +97,19 @@ public class GameController : MonoBehaviour
             {
                 this.goodSound.Play();
             }
-            if (this._points == 100)
+            if (sceneName == "GamePage")
             {
-                SceneManager.LoadScene("NextLevel");
+                if (this._points == 100)
+                {
+                    SceneManager.LoadScene("NextLevel");
+                }
+            }
+            if (sceneName == "NextLevel")
+            {
+                if(this._points == 150)
+                {
+                    SceneManager.LoadScene("3BossIntro");
+                }
             }
         }
         else
