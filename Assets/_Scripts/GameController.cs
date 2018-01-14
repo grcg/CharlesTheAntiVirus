@@ -19,12 +19,22 @@ public class GameController : MonoBehaviour
     //display txt: life and score
     public Text PointsLabel;
     public bool gameOver = false;
+    public static GameController instance;
     //public Text LifePoints;
     //Private Fields
     private List<GameObject> _bacteria;
     private int _points;
     private int _lifePoints;
-
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Use this for initialization
     void Start()
