@@ -40,7 +40,9 @@ public class WhiteCellController : MonoBehaviour {
         //transform.position = new Vector2(randomHorizontalPosition, this.resetPosition);
 
         float randomVerticlePosition = Random.Range(verticleBorder, -verticleBorder);
-        transform.position = new Vector2(this.resetPosition,randomVerticlePosition);
+
+        // TODO: modify the starting x position
+        transform.position = new Vector2(this.resetPosition + 4000, randomVerticlePosition);
     }
 
     private void _checkBounds()

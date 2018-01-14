@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     //Bacteria spawn num
     public GameObject Bacteria;
     public int bacteriaNumber;
+	public GameObject WhiteBloodCell;
+	public int WhiteBloodCellAmount;
     //display txt: life and score
     public Text PointsLabel;
     public bool gameOver = false;
@@ -23,8 +25,14 @@ public class GameController : MonoBehaviour
     //public Text LifePoints;
     //Private Fields
     private List<GameObject> _bacteria;
+	private List<GameObject> _whiteBloodCell;
+
     private int _points;
     private int _lifePoints;
+
+    // TODO: define next scene name
+    public string nextScene;
+    public int pointsToWin = 500;
     private void Awake()
     {
         if (instance == null)
@@ -55,9 +63,16 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+		this._whiteBloodCell = new List<GameObject>();
+		//creating pool of bacteria to keep track of amount of bacteria
+		for (int i = 0; i < this.WhiteBloodCellAmount; i++)
+		{
+			this._bacteria.Add(Instantiate(WhiteBloodCell));
+		}
+	}
+	
+	// Update is called once per frame
+	void Update () {
         //bacteriaNumber = Random.Range(minSpawn, maxSpawn);
         if (gameOver)
         {
@@ -100,6 +115,8 @@ public class GameController : MonoBehaviour
         //If lives depletes to zero then lose condition activates, goes to end scene
         if (this.GetLifePoints() <= 0)
         {
+            // TODO: write high score to storage
+            PlayerPrefs.SetInt("highScore", this._points);
             gameOver = true;
             //Add losing sound
         }

@@ -1,0 +1,19 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class StartButtonScript : MonoBehaviour {
+    public AudioSource startSound;
+
+    public void OnButtonClick()
+    {
+        //Debug.Log("Start button clicked!");
+<<<<<<< HEAD
+        SceneManager.LoadScene("GamePage");
+=======
+        SceneManager.LoadScene("1Level");
+>>>>>>> plaxa_master_merge
+        this.startSound.Play();
+    }
+}

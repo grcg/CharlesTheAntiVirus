@@ -24,5 +24,17 @@ public class BulletCollision : MonoBehaviour {
 			//SendMesssage is used because _reset is private
 			Destroy(gameObject);
 		}
-	}
+
+        Debug.Log("bullet boss collision");
+        if (collider.gameObject.CompareTag("Boss"))
+        {
+            //collider.gameObject.SendMessage("Hit");
+            collider.gameObject.GetComponent<BossBehaviour>().Hit();
+            //calls the reset method
+            //SendMesssage is used because _reset is private
+
+            Destroy(gameObject);
+            Debug.Log("Disappear");
+        }
+    }
 }

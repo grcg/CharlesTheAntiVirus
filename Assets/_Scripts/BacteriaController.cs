@@ -25,6 +25,10 @@ public class BacteriaController : MonoBehaviour {
     [SerializeField] private float verticalBorder;
     [SerializeField] private float horizontalBorder;
 
+    // TODO: new variables we need
+    private float initialVerticalPosition;
+    private float verticalDistance = 250;
+
     // Use this for initialization
     void Start()
     {
@@ -42,6 +46,12 @@ public class BacteriaController : MonoBehaviour {
         //(X,Y)
         transform.position = new Vector2(newHorizontalPosition, newVerticalPosition);
 
+        // TODO: check position and maybe change verticalSpeed
+        if (Mathf.Abs(transform.position.y - initialVerticalPosition) > verticalDistance)
+        {
+            _verticalSpeed = -_verticalSpeed;
+        }
+
         this._checkBounds();
     }
 
@@ -51,7 +61,9 @@ public class BacteriaController : MonoBehaviour {
 		hp = maxHp;
 
         //Random speed for x,and y movements
-        this._horizontalSpeed = Random.Range(this.horizontalSpeed.min, this.horizontalSpeed.max);
+        // TODO: changed reset method
+        //this._horizontalSpeed = Random.Range(this.horizontalSpeed.min, this.horizontalSpeed.max);
+        this._horizontalSpeed = this.horizontalSpeed.min;
         this._verticalSpeed = Random.Range(this.verticalSpeed.min, this.verticalSpeed.max);
 
         //Limit y axis where bacteria spawns (380, -380)
@@ -61,6 +73,9 @@ public class BacteriaController : MonoBehaviour {
         //transform.Rotate(0.0f, 0.0f, Random.Range(0, 360));
         //var randomScale = Random.Range(0.5f, 1.0f);
         //transform.localScale = new Vector2(randomScale, randomScale);
+
+        // TODO: record initial y position
+        initialVerticalPosition = transform.position.y;
     }
 
     private void _checkBounds()
