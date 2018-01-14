@@ -61,7 +61,6 @@ public class GameController : MonoBehaviour
         {
             this._bacteria.Add(Instantiate(Bacteria));
         }
-    }
 
 		this._whiteBloodCell = new List<GameObject>();
 		//creating pool of bacteria to keep track of amount of bacteria
